@@ -14,7 +14,11 @@ This README is the landing page and the **specification of the interface** (mast
 own README with everything that is specific to the family: the instances of the device, their settings and the status of
 the implementation.
 
-> **Status: design.** No implementation exists yet, the interface below is a proposal. Stories and branches follow.
+> **Status: STM32H5 implemented (branch `Dev/STM32H5`).** FDCAN1 (every line), FDCAN2 (every line
+> except STM32H503 / STM32H562) and FDCAN3 (STM32H5E4 / H5E5 / H5F4 / H5F5 only), all confirmed
+> from the CMSIS device headers. Unit tests pass on all 12 STM32H5 lines; integration tests
+> compile for the target but were not run on hardware (no board access). The other families are
+> still a proposal, see the table below.
 
 ---
 
@@ -92,7 +96,7 @@ master.
 
 | Family | Branch | Controller | Status |
 |---|---|---|---|
-| STM32H5 | `Dev/STM32H5` | `FDCAN1` (STM32H503), `FDCAN1`, `FDCAN2` (most lines), `FDCAN1` ... `FDCAN3` (H5E / H5F lines): CAN FD with 64-byte payloads, two receive FIFOs, transmit FIFO / queue, transmit event FIFO, the kernel clock selected in the RCC | planned (first) |
+| STM32H5 | `Dev/STM32H5` | `FDCAN1` (every line), `FDCAN2` (every line except STM32H503 / STM32H562), `FDCAN3` (STM32H5E4 / H5E5 / H5F4 / H5F5 only): CAN FD with 64-byte payloads, two receive FIFOs, transmit FIFO / queue, transmit event FIFO, the kernel clock selected in the RCC, a fixed (non-configurable) message RAM layout per instance | implemented |
 | STM32G4 | `Dev/STM32G4` | `FDCAN1` ... `FDCAN3` | planned |
 | STM32H7 | `Dev/STM32H7` | `FDCAN1` ... `FDCAN3` (shared message RAM) | planned |
 | STM32U5 | `Dev/STM32U5` | `FDCAN1` | planned |
